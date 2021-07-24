@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # - PUT or PATCH /articles/:id,
   # - DELETE /articles/:id
   # - etc
-  # if we simply write `resources :articles`. To see the full list of generated routes,
+  # if we simply write `resources :articles`. To see the full list of generated
+  # routes AND the controller actions that Rails requires you to create for them,
   # run `rails routes --expanded` in a terminal. However, we can use `:only` to specify
   # the exact routes we want to be auto-generated.
   resources :articles, only: [:index]
