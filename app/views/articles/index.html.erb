@@ -13,7 +13,8 @@
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td>
-          <a href='/articles/<%= article.id %>'>View</a>
+          <a href="/articles/<%= article.id %>">View</a>
+          <a href="/articles/<%= article.id %>/edit">Edit</a>
         </td>
       </tr>
     <% end %>
