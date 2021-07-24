@@ -1,0 +1,8 @@
+<% if @article %>
+  <h2><%= @article.title %></h2>
+  <p><%= @article.description %></p>
+<% else %>
+  <h2>Oops! Article not found.</h2>
+<% end %>
+
+<a href="/articles">Back to articles</a>

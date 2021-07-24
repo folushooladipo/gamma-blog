@@ -12,7 +12,9 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
-        <td>Some buttons</td>
+        <td>
+          <a href='/articles/<%= article.id %>'>View</a>
+        </td>
       </tr>
     <% end %>
   </tbody>
