@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: rails-blog-app
-  password: <%= ENV['RAILS_BLOG_APP_DATABASE_PASSWORD'] %>
+  username: gamma-blog
+  password: <%= ENV['GAMMA_BLOG_APP_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
