@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .back-to-articles-btn {
+   display: block;
+   margin-top: 20px;
+ }
