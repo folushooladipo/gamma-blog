@@ -7,10 +7,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
-
   def new
   end
 
@@ -23,9 +19,17 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def update
+  def edit
     @article = Article.find(params[:id])
-    @article.update(params.require(:article).permit(:title, :description))
-    redirect_to @article
+  end
+
+  def update
+    puts "update was called"
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      redirect_to @article
+    else
+      render "edit"
+    end
   end
 end

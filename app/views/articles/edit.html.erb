@@ -1,6 +1,14 @@
 <h1>Edit article</h1>
 <% if @article %>
-  <%= form_with model: @article, local: true, html: { class: "edit-article-form" } do |form| %>
+  <% if @article.errors.any? %>
+    <h4 class="error-msg">Your changes could not be saved because of these errors:</h4>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form_with model: @article, method: "patch", url: "/articles/#{@article.id}/edit", local: true, html: { class: "edit-article-form" } do |form| %>
     <div class="title-input-container">
       <%= form.label :title %>
       <%= form.text_field :title %>

@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   # routes AND the controller actions that Rails requires you to create for them,
   # run `rails routes --expanded` in a terminal. However, we can use `:only` to specify
   # the exact routes we want to be auto-generated.
-  resources :articles, only: [:index, :show, :edit, :new, :update]
+  resources :articles, only: [:index, :show, :new]
   get "/articles/new", to: "articles#new"
   post "/articles/new", to: "articles#create"
+  get "/articles/:id/edit", to: "articles#edit"
+  patch "/articles/:id/edit", to: "articles#update"
 end
