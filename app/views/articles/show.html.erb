@@ -1,6 +1,9 @@
 <% if @article %>
-  <h2><%= @article.title %></h2>
-  <p><%= @article.description %></p>
+  <div class="article-details-container">
+    <a href="/articles/<%= @article.id %>/edit">Edit article</a>
+    <h2><%= @article.title %></h2>
+    <p><%= @article.description %></p>
+  </div>
 <% else %>
   <h2>Oops! Article not found.</h2>
 <% end %>
