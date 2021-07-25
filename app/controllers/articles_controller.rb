@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
     puts "update was called"
     @article = Article.find(params[:id])
     if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was updated."
       redirect_to @article
     else
       render "edit"
