@@ -16,7 +16,7 @@
         <td>
           <a href="/articles/<%= article.id %>" class="action-btn">View</a>
           <a href="/articles/<%= article.id %>/edit" class="action-btn">Edit</a>
-          <%= link_to "Delete", article_path(article), method: :delete,  class: "action-btn" %>
+          <%= link_to "Delete", article_path(article), method: :delete,  class: "action-btn", data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
     <% end %>
