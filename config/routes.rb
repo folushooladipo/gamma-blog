@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   # run `rails routes --expanded` in a terminal. However, we can use `:only` to specify
   # the exact routes we want to be auto-generated.
   resources :articles, only: [:index, :show, :new]
+  # I declared these explicitly instead of using `resources` because it made no sense
+  # to me to go to `/articles/new` to create an article and then get redirected
+  # to `/articles` when there was a validation error all because the <form>'s `action=""``
+  # was set to `/articles` and the app, thus, redirected to that path.
   get "/articles/new", to: "articles#new"
   post "/articles/new", to: "articles#create"
   get "/articles/:id/edit", to: "articles#edit"
