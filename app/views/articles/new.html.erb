@@ -1,5 +1,13 @@
 <h1>Create an article</h1>
-<%= form_with scope: :article, url: "/articles", local: true, html: { class: "create-article-form" } do |form| %>
+<% if @article && @article.errors.any? %>
+  <h4 class="error-msg">Your article could not be created because of <%= @article.errors.full_messages.length == 1 ? "this error" : "these errors" %>:</h4>
+  <ul class="error-msg">
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_with scope: :article, url: "/articles/new", local: true, html: { class: "create-article-form" } do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
