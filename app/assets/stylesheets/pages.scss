@@ -1,3 +1,7 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.nav-btn:not(:last-of-type),
+.action-btn:not(:last-of-type) {
+  margin-right: 0.5rem;
+}

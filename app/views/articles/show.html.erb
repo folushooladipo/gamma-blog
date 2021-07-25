@@ -1,11 +1,17 @@
 <% if @article %>
   <div class="article-details-container">
-    <a href="/articles/<%= @article.id %>/edit">Edit article</a>
     <h2><%= @article.title %></h2>
     <p><%= @article.description %></p>
+    <div class="action-btns-container">
+      <%= link_to "Edit", "/articles/#{@article.id}/edit", class: "action-btn" %>
+      <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "action-btn" %>
+      <%= link_to "Back to articles", articles_path, class: "action-btn" %>
+    </div>
   </div>
 <% else %>
   <h2>Oops! Article not found.</h2>
+  <div class="action-btns-container">
+    <%= link_to "Back to articles", articles_path, class: "action-btn" %>
+  </div>
 <% end %>
 
-<a href="/articles" class="back-to-articles-btn">Back to articles</a>

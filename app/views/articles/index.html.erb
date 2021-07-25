@@ -22,3 +22,19 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="home-btn-container">
+  <%= link_to "Back to home", root_path %>
+</div>
+
+<%#
+TODO
+- Having read the output of `rails routes --expanded` some more, where possible
+and/or reasonable, replace hard-coded paths with values provided by Rails e.g
+replace `/articles/new` with `new_article_path`. Check the `Prefix` rows of the
+output of `rails routes --expanded` and then add `_path` to that prefix to get
+the appropriate path. NB: `edit_article_path` doesn't exist and my guess is
+that that has something to do with how I declared the path explicitly
+in `config/routes.rb` instead of using `resources :articles` to generate it.
+- Instead of using <a> anywhere in our code, use `link_to` instead.
+%>
