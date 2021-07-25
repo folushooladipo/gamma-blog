@@ -14,8 +14,9 @@
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td>
-          <a href="/articles/<%= article.id %>">View</a>
-          <a href="/articles/<%= article.id %>/edit">Edit</a>
+          <a href="/articles/<%= article.id %>" class="action-btn">View</a>
+          <a href="/articles/<%= article.id %>/edit" class="action-btn">Edit</a>
+          <%= link_to "Delete", article_path(article), method: :delete,  class: "action-btn" %>
         </td>
       </tr>
     <% end %>

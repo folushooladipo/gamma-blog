@@ -34,4 +34,14 @@ class ArticlesController < ApplicationController
       render "edit"
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+    if @article
+      @article.destroy
+      redirect_to articles_path
+    else
+      render plain: "Could not find the article you want to delete."
+    end
+  end
 end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # routes AND the controller actions that Rails requires you to create for them,
   # run `rails routes --expanded` in a terminal. However, we can use `:only` to specify
   # the exact routes we want to be auto-generated.
-  resources :articles, only: [:index, :show, :new]
+  resources :articles, only: [:index, :show, :new, :destroy]
   # I declared these explicitly instead of using `resources` because it made no sense
   # to me to go to `/articles/new` to create an article and then get redirected
   # to `/articles` when there was a validation error all because the <form>'s `action=""``

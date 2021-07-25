@@ -1,5 +1,9 @@
 .articles-table {
   margin-top: 20px;
+
+  .action-btn:not(:last-of-type) {
+    margin-right: 0.5rem;
+  }
 }
 
 .articles-table-header {
